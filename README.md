@@ -89,6 +89,43 @@ Das viewBox-Attribut wird im < svg >-Element definiert und besteht aus vier Wert
 
 ### Formen (Kreis und Rechteck)
 
+Das `<circle>`-Element zeichnet einen **_Kreis_** auf dem Bildschirm. Es verwendet drei grundlegende Attribute, um Form und Grösse des Elements zu bestimmen:
+
+- `r`: Der Radius des Kreises.
+- `cx`: Die x-Position des Zentrums des Kreises.
+- `cy`: Die y-Position des Zentrums des Kreises.
+
+Zusätzlich dazu gibt es noch eine Reihe von anderen Attributen, die festgelegt werden können. Diese Attribute können für jede SVG-Form festgelegt werden.
+
+- `fill`: Die Füllfarbe.
+- `stroke`: Die Strichfarbe.
+- `stroke-width`: Die Strichbreite.
+- `opacity`: Die Deckkraft der Form.
+
+Beispiel:
+
+    ````
+        <svg>
+            <circle cx="50" cy="50" r="40" stroke=" green " stroke−width="4" fill =" yellow " opacity=" 0.5 " />
+        </svg>
+    ```
+
+Das `<rect>`-Element zeichnet ein **_Rechteck_** auf dem Bildschirm. Es gibt 6 grundlegende Attribute, die die Position und Form der Rechtecke auf dem Bildschirm steuern.
+
+- `x`: Die x-Position der oberen linken Ecke.
+- `y`: Die y-Position der oberen linken Ecke.
+- `width`: Die Breite des Rechtecks. height Die Höhe des Rechtecks.
+- `rx`: Der x-Radius für abgerundete Ecken (wenn nicht festgelegt, wird er auf 0 gesetzt).
+- `ry`: Der y-Radius für abgerundete Ecken (wenn nicht festgelegt, wird er auf 0 gesetzt).
+
+Beispiel:
+
+    ````
+        <svg>
+            <rect x="30" y="80" width ="200" height ="50" fill ="blue" stroke="red" opacity ="0.5" stroke−width="4px" />
+        </svg>
+    ```
+
 ### Ausschneiden (Clip)
 
 ### Weitere Formen (Ellipse, Polygon)
