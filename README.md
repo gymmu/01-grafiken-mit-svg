@@ -39,12 +39,27 @@ wir im Code machen und **speichern** (`CRTL + S`) direkt auf der Webseite
 ersichtlich sein. Manchmal muss die Webseite auch neu geladen werden, dazu kann
 man bei den meisten Browsern `F5` drücken.
 
+## SVG
+
+### Koordinatensystem (viewBox)
+
+### Formen (Kreis und Rechteck)
+
+### Ausschneiden (Clip)
+
+### Weitere Formen (Ellipse, Polygon)
+
+### Pfade
+
+### Animationen
+
+### Gruppen und neue Elemente
+
 ## Aufgaben
 
 Wenn alles aufgesetzt ist, können Sie die folgenden Aufgaben bearbeiten, um
 einen guten Einstieg ins Projekt zu bekommen.
 
-### Aufgabe: Titel hinzufügen
+### Aufgabe 01: Kreis zentrieren
 
-Fügen Sie in der Datei `index.html` ein `<h1>`-Tag ein, mit dem Titel
-`'Meine erste Webseite'` ein.
+Zentrieren Sie den Kreis in dem Bild.
