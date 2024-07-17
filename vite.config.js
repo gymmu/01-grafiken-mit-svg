@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
+import FullReload from "vite-plugin-full-reload";
 
 export default defineConfig({
+  plugins: [FullReload(["images/**/*.svg"])],
   server: {
     host: "0.0.0.0",
   },
