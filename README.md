@@ -51,7 +51,7 @@ Zudem unterstützt SVG interaktive Elemente und Animationen, die direkt in die G
 
 ### Tags und Attribute
 
-**_Tags_** sind die grundlegenden Bausteine in SVG-Grafiken (wie auch in HTML) , die die Struktur und den Inhalt einer Datei definieren. Tags werden durch öffnende und schliessende Winkelklammern (< >) markiert und bestehen aus einem Namen, der den Typ des Elements spezifiziert. Es gibt sowohl öffnende als auch schliessende Tags, wobei der schliessende Tag ein Schrägstrich (/) enthält.
+**_Tags_** sind die grundlegenden Bausteine in SVG-Grafiken (wie auch in HTML) , die die Struktur und den Inhalt einer Datei definieren. Tags werden durch öffnende (< >) und schliessende(</ >) Winkelklammern markiert und haben einem Namen, der den Typ des Elements spezifiziert.
 
 Beispiel:
 
@@ -71,9 +71,11 @@ Beispiel:
 
 ### Koordinatensystem (viewBox)
 
-Wenn Sie mit SVG arbeiten, so orientieren Sie sich stets an einem kartesischen Koordinatensystem.
+Wenn Sie mit SVG arbeiten, so orientieren Sie sich stets an einem Koordinatensystem:
+![](koord.png)
+
 Das viewBox-Attribut ist ein mächtiges Werkzeug in SVG, das es ermöglicht, eine flexible und skalierbare Sichtfensteransicht für die Grafik zu definieren.
-Es legt den Bereich der SVG-Zeichenfläche fest, der sichtbar ist, und wie dieser Bereich an die Grösse des < svg >-Elements angepasst wird. Hierdurch wird eine Koordinatensystemtransformation durchgeführt, sodass der spezifizierte Bereich auf die tatsächliche Anzeigefläche des SVG skaliert wird.
+Es legt den Bereich der SVG-Zeichenfläche fest, der sichtbar ist, und wie dieser Bereich an die Grösse des < svg >-Elements angepasst wird. Dadurch wird eine Koordinatensystemtransformation durchgeführt, sodass der spezifizierte Bereich auf die tatsächliche Anzeigefläche des SVG skaliert wird.
 
 Das viewBox-Attribut wird im < svg >-Element definiert und besteht aus vier Werten:
 
@@ -83,9 +85,9 @@ Das viewBox-Attribut wird im < svg >-Element definiert und besteht aus vier Wert
 
 `min-y` wird verwendet, um die vertikale Achse festzulegen. Man kann die Grafik auf einer vertikalen Achse verschieben (d.h. nach oben und unten).
 
-`width` wird verwendet, um die Breite der viewBox festzulegen.
+`width` wird verwendet, um die Gesamtbreite der viewBox festzulegen.
 
-`height` wird verwendet, um die Höhe der viewBox festzulegen.
+`height` wird verwendet, um die Gesamthöhe der viewBox festzulegen.
 
 ### Formen (Kreis und Rechteck)
 
@@ -104,11 +106,11 @@ Zusätzlich dazu gibt es noch eine Reihe von anderen Attributen, die festgelegt 
 
 Beispiel:
 
-    ````
-        <svg>
-            <circle cx="50" cy="50" r="40" stroke=" green " stroke−width="4" fill =" yellow " opacity=" 0.5 " />
-        </svg>
-    ```
+```svg
+<svg viewBox="-250 -250 500 500">
+    <circle cx="0" cy="0" r="100" stroke=" green " stroke-width="10" fill =" yellow " opacity=" 0.5 " />
+</svg>
+```
 
 Das `<rect>`-Element zeichnet ein **_Rechteck_** auf dem Bildschirm. Es gibt 6 grundlegende Attribute, die die Position und Form der Rechtecke auf dem Bildschirm steuern.
 
@@ -119,22 +121,57 @@ Das `<rect>`-Element zeichnet ein **_Rechteck_** auf dem Bildschirm. Es gibt 6 g
 - `ry`: Der y-Radius für abgerundete Ecken (wenn nicht festgelegt, wird er auf 0 gesetzt).
 
 Beispiel:
+```svg
+<svg viewBox="-250 -250 500 500">
+    <rect x="-100" y="-50" width ="100" height ="50" fill ="blue" stroke="red" opacity ="0.5" stroke-width="5px" />
+</svg>
+```
 
-    ````
-        <svg>
-            <rect x="30" y="80" width ="200" height ="50" fill ="blue" stroke="red" opacity ="0.5" stroke−width="4px" />
-        </svg>
-    ```
+### Elemente definieren und verwenden (defs, use)
+
+Das `<defs>`-Tag (definitions) wird in SVG verwendet, um Elemente zu erstellen und zu speichern. Danach können diese wieder verwendet werden.
+Elemente innerhalb eines <defs>-Tags werden nicht direkt angezeigt, sondern müssen von anderen Elementen im SVG-Dokument mithilfe des `<use>`-Tags und einer `id` aufgerufen werden.
+
+Beispiel:
+
+```svg
+<svg viewBox="-250 -250 500 500">
+    <defs>
+        <circle id="smallCircle" cx="0" cy="0" r="50" />
+        <circle id="bigCircle" cx="0" cy="0" r="200" />
+    </defs>
+    <use href="#bigCircle" fill="blue" />
+    <use href="#smallCircle" fill="red" />
+</svg>
+```
+
+Bei der Verwendung des `<use>`-Tags können noch zusätzliche Attribute wie Füllfarbe, Positionierung oder Grösse ergäntz werden.
 
 ### Ausschneiden (Clip)
 
+Das `<clipPath>`-Element definiert einen Pfad.
+Ein Element, das innerhalb eines Clipping-Pfads liegt, wird angezeigt, während alles ausserhalb des Pfads ausgeblendet wird.
+
+Beispiel:
+
+```svg
+<svg viewBox="-250 -250 500 500">
+    <defs>
+        <clipPath id="myClip">
+            <circle cx="0" cy="0" r="100" />
+        </clipPath>
+    </defs>
+    <rect x="-100" y="-50" width="200" height="100" fill="blue" clip-path="url(#myClip)" />
+</svg>
+```
+
 ### Weitere Formen (Ellipse, Polygon)
+
+### Gruppen und neue Elemente (< use >?)
 
 ### Pfade
 
 ### Animationen
-
-### Gruppen und neue Elemente
 
 ## Aufgaben
 
