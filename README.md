@@ -71,7 +71,9 @@ Beispiel:
 
 ### Koordinatensystem (viewBox)
 
-Wenn Sie mit SVG arbeiten, so orientieren Sie sich stets an einem kartesischen Koordinatensystem.
+Wenn Sie mit SVG arbeiten, so orientieren Sie sich stets an einem Koordinatensystem:
+![](koord.png)
+
 Das viewBox-Attribut ist ein mächtiges Werkzeug in SVG, das es ermöglicht, eine flexible und skalierbare Sichtfensteransicht für die Grafik zu definieren.
 Es legt den Bereich der SVG-Zeichenfläche fest, der sichtbar ist, und wie dieser Bereich an die Grösse des < svg >-Elements angepasst wird. Dadurch wird eine Koordinatensystemtransformation durchgeführt, sodass der spezifizierte Bereich auf die tatsächliche Anzeigefläche des SVG skaliert wird.
 
@@ -79,9 +81,9 @@ Das viewBox-Attribut wird im < svg >-Element definiert und besteht aus vier Wert
 
     viewBox="min-x min-y width height"
 
-`min-x` wird verwendet, um die horizontale Achse festzulegen. Man kann den kleinsten x-Wert der horizontalen Achse festlegen.
+`min-x` wird verwendet, um die horizontale Achse festzulegen. Man kann die Grafik auf einer horizontalen Achse verschieben (d.h. links und rechts).
 
-`min-y` wird verwendet, um die vertikale Achse festzulegen. Man kann den kleinsten y-Wert der vertikalen Achse festlegen.
+`min-y` wird verwendet, um die vertikale Achse festzulegen. Man kann die Grafik auf einer vertikalen Achse verschieben (d.h. nach oben und unten).
 
 `width` wird verwendet, um die Gesamtbreite der viewBox festzulegen.
 
@@ -119,7 +121,7 @@ Das `<rect>`-Element zeichnet ein **_Rechteck_** auf dem Bildschirm. Es gibt 6 g
 Beispiel:
 
     <svg viewBox="-250 -250 500 500">
-        <rect x="-100" y="50" width ="100" height ="50" fill ="blue" stroke="red" opacity ="0.5" stroke-width="5px" />
+        <rect x="-100" y="-50" width ="100" height ="50" fill ="blue" stroke="red" opacity ="0.5" stroke-width="5px" />
     </svg>
 
 ### Elemente definieren und verwenden (defs, use)
@@ -142,10 +144,28 @@ Bei der Verwendung des `<use>`-Tags können noch zusätzliche Attribute wie Fül
 
 ### Ausschneiden (Clip)
 
-Das `<clippath>`-Element definiert einen Pfad.
+Das `<clipPath>`-Element definiert einen Pfad.
 Ein Element, das innerhalb eines Clipping-Pfads liegt, wird angezeigt, während alles ausserhalb des Pfads ausgeblendet wird.
 
-<clippath>:
+Beispiel:
+
+    <svg viewBox="-250 -250 500 500">
+        <defs>
+            <clipPath id="myClip">
+                <circle cx="0" cy="0" r="100" />
+            </clipPath>
+        </defs>
+        <rect x="-100" y="-50" width="200" height="100" fill="blue" clip-path="url(#myClip)" />
+    </svg>
+
+<svg viewBox="-250 -250 500 500">
+<defs>
+<clipPath id="myClip">
+<circle cx="0" cy="0" r="100" />
+</clipPath>
+</defs>
+<rect x="-100" y="-50" width="200" height="100" fill="blue" clip-path="url(#myClip)" />
+</svg>
 
 ### Weitere Formen (Ellipse, Polygon)
 
