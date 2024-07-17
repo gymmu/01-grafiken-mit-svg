@@ -1,34 +1,20 @@
-import { describe, expect, test, beforeEach } from 'vitest'
-import { JSDOM } from 'jsdom'
-import fs from 'fs'
-import path from 'path'
+import { beforeEach, describe, expect, test } from 'vitest'
+import Website from './tests/utils/website.js'
 
 describe('index.html', () => {
-    const html = fs.readFileSync(
-        path.resolve(__dirname, '../index.html'),
-        'utf8'
-    )
-
-    let dom
-    let container
+    let body
 
     beforeEach(() => {
-        // Constructing a new JSDOM with this option is the key
-        // to getting the code in the script tag to execute.
-        // This is indeed dangerous and should only be done with trusted content.
-        // https://github.com/jsdom/jsdom#executing-scripts
-        dom = new JSDOM(html)
-        container = dom.window.document.body
+        body = new Website('index.html').body
     })
 
-    test('Is true', () => {
-        expect(true).toBe(true)
-    })
-
-    test('There is an <h1>-Tag', () => {
-        const elem = container.querySelector('h1')
-
+    test('Die Webseite hat ein <h1>-Tag.', () => {
+        const elem = body.querySelector('h1')
         expect(elem).toBeDefined()
+    })
+
+    test("Das <h1>-Tag hat den Inhalt 'Hello World'", () => {
+        const elem = body.querySelector('h1')
         expect(elem.textContent).toBe('Hello World!')
     })
 })
