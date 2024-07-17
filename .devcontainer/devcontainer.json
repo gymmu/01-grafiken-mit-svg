@@ -1,0 +1,33 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
+{
+  "name": "Node.js",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+
+  // Das ist der Standardport, der von vite genutzt wird. Wir leiten diesen
+  // weiter, damit wir die Webseite von aussen zugreifen können.
+  "forwardPorts": [5173],
+
+  // Hier können wir Änderungen an der Standart-Konfiguration von VSCode
+  // vornehmen und benötigte Erweiterungen installieren lassen.
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true
+      },
+      "extensions": ["mhutchie.git-graph", "esbenp.prettier-vscode"]
+    }
+  },
+
+  // Hier können wir Befehle laufen lassen die nach der Erstellung des
+  // Containers ausgeführt werden sollen. Meistens müssen hier die Pakete die
+  // in dem Projekt verwendet werden noch installiert werden.
+  "postCreateCommand": "npm install",
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "root"
+}
