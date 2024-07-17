@@ -41,7 +41,51 @@ man bei den meisten Browsern `F5` drücken.
 
 ## SVG
 
+Die Abkürzung SVG stheht für **_Scalable Vector Graphics_**.
+Die meisten Bilder und Grafiken, die Sie verwenden und online finden, basieren auf Pixeln. Der Nachteil dieser Rastergrafiken ist, dass sie sich nicht gut skalieren lassen - das heisst, wenn Sie ausreichend heranzoomen, werden Sie irgendwann immer die einzelnen Pixel sehen.
+
+Vektorgrafiken basieren auf einer völlig anderen Idee: Anstatt dem Computer zu sagen, welche Pixel ein- und ausgeschaltet werden sollen, geben wir dem Computer vor, welche Form wir möchten, und er füllt die Pixel bei Bedarf aus.
+Das bedeutet, dass der Computer immer weiss, wie das Bild aussehen sollte, unabhängig davon, wie stark wir heran- oder herauszoomen, und es mit der entsprechenden Auflösung zeichnen kann.
+Ein weiterer Vorteil von SVG ist, dass SVG-Dateien oft kleiner als vergleichbare Rastergrafiken sind, insbesondere bei komplexen und detaillierten Bildern.
+Zudem unterstützt SVG interaktive Elemente und Animationen, die direkt in die Grafik eingebettet werden können.
+
+### Tags und Attribute
+
+**_Tags_** sind die grundlegenden Bausteine in SVG-Grafiken (wie auch in HTML) , die die Struktur und den Inhalt einer Datei definieren. Tags werden durch öffnende und schliessende Winkelklammern (< >) markiert und bestehen aus einem Namen, der den Typ des Elements spezifiziert. Es gibt sowohl öffnende als auch schliessende Tags, wobei der schliessende Tag ein Schrägstrich (/) enthält.
+
+Beispiel:
+
+    <svg width="100" height="100">
+        <!-- Weitere SVG-Elemente -->
+    </svg>
+
+`<svg>` ist das Wurzelelement, das die gesamte SVG-Grafik umschliesst.
+
+**_Attribute_** sind zusätzliche Informationen, die innerhalb eines Tags spezifiziert werden, um die Eigenschaften des Elements zu definieren. Jedes Attribut besteht aus einem Namen und einem Wert, die durch ein Gleichheitszeichen (=) verbunden und in Anführungszeichen gesetzt sind.
+
+Beispiel:
+
+    <svg width="100" height="100">
+
+`width="100"` und `height="100"` sind zwei Attribute mit zugehörigem Wert, welche die Grösse der SVG-Grafik beeinflussen.
+
 ### Koordinatensystem (viewBox)
+
+Wenn Sie mit SVG arbeiten, so orientieren Sie sich stets an einem kartesischen Koordinatensystem.
+Das viewBox-Attribut ist ein mächtiges Werkzeug in SVG, das es ermöglicht, eine flexible und skalierbare Sichtfensteransicht für die Grafik zu definieren.
+Es legt den Bereich der SVG-Zeichenfläche fest, der sichtbar ist, und wie dieser Bereich an die Grösse des < svg >-Elements angepasst wird. Hierdurch wird eine Koordinatensystemtransformation durchgeführt, sodass der spezifizierte Bereich auf die tatsächliche Anzeigefläche des SVG skaliert wird.
+
+Das viewBox-Attribut wird im < svg >-Element definiert und besteht aus vier Werten:
+
+    viewBox="min-x min-y width height"
+
+`min-x` wird verwendet, um die horizontale Achse festzulegen. Man kann die Grafik auf einer horizontalen Achse verschieben (d.h. links und rechts).
+
+`min-y` wird verwendet, um die vertikale Achse festzulegen. Man kann die Grafik auf einer vertikalen Achse verschieben (d.h. nach oben und unten).
+
+`width` wird verwendet, um die Breite der viewBox festzulegen.
+
+`height` wird verwendet, um die Höhe der viewBox festzulegen.
 
 ### Formen (Kreis und Rechteck)
 
