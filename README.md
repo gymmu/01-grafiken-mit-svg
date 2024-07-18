@@ -142,7 +142,7 @@ Beispiel:
 
 Bei der Verwendung des `<use>`-Tags können noch zusätzliche Attribute wie Füllfarbe, Positionierung oder Grösse ergäntz werden.
 
-### Ausschneiden (Clip)
+### Ausschneiden (clipPath)
 
 Das `<clipPath>`-Element definiert einen Pfad.
 Ein Element, das innerhalb eines Clipping-Pfads liegt, wird angezeigt, während alles ausserhalb des Pfads ausgeblendet wird.
@@ -169,7 +169,22 @@ Beispiel:
 
 ### Weitere Formen (Ellipse, Polygon)
 
-### Gruppen und neue Elemente (< use >?)
+Ein `<ellipse>`-Element ist eine allgemeinere Form des < circle >-Elements, bei dem Sie den x- und y-Radius (in der Mathematik oft als Halbachsen bezeichnet) des Kreises separat skalieren können.
+
+- `rx`: Der x-Radius des Kreises.
+- `ry`: Der y-Radius des Kreises.
+- `cx`: Die x-Position des Zentrums des Kreises.
+- `cy`: Die y-Position des Zentrums des Kreises.
+
+Beispiel:
+
+    <svg viewBox="-250 -250 500 500">
+        <ellipse cx="30" cy="60" rx ="20" ry ="50" fill ="purple" />
+    </svg>
+
+Ein `<polygon>`-Element besteht aus geraden Liniensegmenten, die eine Liste von Punkten verbinden. Bei Polygonen verbindet der Pfad jedoch automatisch den letzten Punkt mit dem ersten, um eine geschlossene Form zu erstellen.
+
+### Gruppen und neue Elemente
 
 ### Pfade
 
