@@ -106,9 +106,11 @@ Zusätzlich dazu gibt es noch eine Reihe von anderen Attributen, die festgelegt 
 
 Beispiel:
 
-    <svg viewBox="-250 -250 500 500">
-        <circle cx="0" cy="0" r="100" stroke=" green " stroke-width="10" fill =" yellow " opacity=" 0.5 " />
-    </svg>
+```svg
+<svg viewBox="-250 -250 500 500">
+    <circle cx="0" cy="0" r="100" stroke=" green " stroke-width="10" fill =" yellow " opacity=" 0.5 " />
+</svg>
+```
 
 Das `<rect>`-Element zeichnet ein **_Rechteck_** auf dem Bildschirm. Es gibt 6 grundlegende Attribute, die die Position und Form der Rechtecke auf dem Bildschirm steuern.
 
@@ -119,10 +121,11 @@ Das `<rect>`-Element zeichnet ein **_Rechteck_** auf dem Bildschirm. Es gibt 6 g
 - `ry`: Der y-Radius für abgerundete Ecken (wenn nicht festgelegt, wird er auf 0 gesetzt).
 
 Beispiel:
-
-    <svg viewBox="-250 -250 500 500">
-        <rect x="-100" y="-50" width ="100" height ="50" fill ="blue" stroke="red" opacity ="0.5" stroke-width="5px" />
-    </svg>
+```svg
+<svg viewBox="-250 -250 500 500">
+    <rect x="-100" y="-50" width ="100" height ="50" fill ="blue" stroke="red" opacity ="0.5" stroke-width="5px" />
+</svg>
+```
 
 ### Elemente definieren und verwenden (defs, use)
 
@@ -131,14 +134,16 @@ Elemente innerhalb eines <defs>-Tags werden nicht direkt angezeigt, sondern müs
 
 Beispiel:
 
-    <svg viewBox="-250 -250 500 500">
-        <defs>
-            <circle id="smallCircle" cx="0" cy="0" r="50" />
-            <circle id="bigCircle" cx="0" cy="0" r="200" />
-        </defs>
-        <use href="#bigCircle" fill="blue" />
-        <use href="#smallCircle" fill="red" />
-    </svg>
+```svg
+<svg viewBox="-250 -250 500 500">
+    <defs>
+        <circle id="smallCircle" cx="0" cy="0" r="50" />
+        <circle id="bigCircle" cx="0" cy="0" r="200" />
+    </defs>
+    <use href="#bigCircle" fill="blue" />
+    <use href="#smallCircle" fill="red" />
+</svg>
+```
 
 Bei der Verwendung des `<use>`-Tags können noch zusätzliche Attribute wie Füllfarbe, Positionierung oder Grösse ergäntz werden.
 
@@ -149,23 +154,16 @@ Ein Element, das innerhalb eines Clipping-Pfads liegt, wird angezeigt, während 
 
 Beispiel:
 
-    <svg viewBox="-250 -250 500 500">
-        <defs>
-            <clipPath id="myClip">
-                <circle cx="0" cy="0" r="100" />
-            </clipPath>
-        </defs>
-        <rect x="-100" y="-50" width="200" height="100" fill="blue" clip-path="url(#myClip)" />
-    </svg>
-
+```svg
 <svg viewBox="-250 -250 500 500">
-<defs>
-<clipPath id="myClip">
-<circle cx="0" cy="0" r="100" />
-</clipPath>
-</defs>
-<rect x="-100" y="-50" width="200" height="100" fill="blue" clip-path="url(#myClip)" />
+    <defs>
+        <clipPath id="myClip">
+            <circle cx="0" cy="0" r="100" />
+        </clipPath>
+    </defs>
+    <rect x="-100" y="-50" width="200" height="100" fill="blue" clip-path="url(#myClip)" />
 </svg>
+```
 
 ### Weitere Formen (Ellipse, Polygon)
 
@@ -198,7 +196,3 @@ einen guten Einstieg ins Projekt zu bekommen.
 ### Aufgabe 01: Kreis zentrieren
 
 Zentrieren Sie den Kreis in dem Bild.
-
-```
-
-```

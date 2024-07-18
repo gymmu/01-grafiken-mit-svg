@@ -1,0 +1,20 @@
+{
+    "tabWidth": 4,
+    "useTabs": false,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "plugins": ["@prettier/plugin-xml"],
+    "overrides": [
+        {
+            "files": ["*.svg"],
+            "options": {
+                "tabWidth": 2,
+                "useTabs": false,
+                "bracketSameLine": false,
+                "singleAttributePerLine": false,
+                "xmlSortAttributesByKey": true,
+                "xmlWhitespaceSensitivity": "strict"
+            }
+        }
+    ]
+}
