@@ -69,61 +69,77 @@ Beispiel:
 
 `width="100"` und `height="100"` sind zwei Attribute mit zugehörigem Wert, welche die Grösse der SVG-Grafik beeinflussen.
 
-### Koordinatensystem (viewBox)
+### Koordinatensystem
 
 Wenn Sie mit SVG arbeiten, so orientieren Sie sich stets an einem Koordinatensystem:
 ![](koord.png)
 
-Das viewBox-Attribut ist ein mächtiges Werkzeug in SVG, das es ermöglicht, eine flexible und skalierbare Sichtfensteransicht für die Grafik zu definieren.
-Es legt den Bereich der SVG-Zeichenfläche fest, der sichtbar ist, und wie dieser Bereich an die Grösse des < svg >-Elements angepasst wird. Dadurch wird eine Koordinatensystemtransformation durchgeführt, sodass der spezifizierte Bereich auf die tatsächliche Anzeigefläche des SVG skaliert wird.
+Wie Sie sehen, befindet sich der Koordinatenursprung (0,0) in der oberen linken Ecke. Von dort aus können die positiven x-Koordinaten nach rechts und die positiven y-Koordinaten nach unten abgelesen werden.
 
-Das viewBox-Attribut wird im < svg >-Element definiert und besteht aus vier Werten:
+Die Grösse des Koordinatensystems können Sie über folgende zwei Attribute im < svg >-Tag festlegen:
 
-    viewBox="min-x min-y width height"
+-   `width`: wird verwendet, um die Breite des Koordinatensystems festzulegen.
+-   `height`: wird verwendet, um die Höhe des Koordinatensystems festzulegen.
 
-`min-x` wird verwendet, um die horizontale Achse festzulegen. Man kann die Grafik auf einer horizontalen Achse verschieben (d.h. links und rechts).
+Bei den zu lösenden Aufgaben werden Sie im normalfall mit folgenden Attributwerten arbeiten:
 
-`min-y` wird verwendet, um die vertikale Achse festzulegen. Man kann die Grafik auf einer vertikalen Achse verschieben (d.h. nach oben und unten).
-
-`width` wird verwendet, um die Gesamtbreite der viewBox festzulegen.
-
-`height` wird verwendet, um die Gesamthöhe der viewBox festzulegen.
+```svg
+<svg width="500" height="500">
+```
 
 ### Formen (Kreis und Rechteck)
 
 Das `<circle>`-Element zeichnet einen **_Kreis_** auf dem Bildschirm. Es verwendet drei grundlegende Attribute, um Form und Grösse des Elements zu bestimmen:
 
-- `r`: Der Radius des Kreises.
-- `cx`: Die x-Position des Zentrums des Kreises.
-- `cy`: Die y-Position des Zentrums des Kreises.
+-   `r`: Der Radius des Kreises.
+-   `cx`: Die x-Position des Zentrums des Kreises.
+-   `cy`: Die y-Position des Zentrums des Kreises.
 
 Zusätzlich dazu gibt es noch eine Reihe von anderen Attributen, die festgelegt werden können. Diese Attribute können für jede SVG-Form festgelegt werden.
 
-- `fill`: Die Füllfarbe.
-- `stroke`: Die Strichfarbe.
-- `stroke-width`: Die Strichbreite.
-- `opacity`: Die Deckkraft der Form.
+-   `fill`: Die Füllfarbe.
+-   `stroke`: Die Strichfarbe.
+-   `stroke-width`: Die Strichbreite.
+-   `opacity`: Die Deckkraft der Form.
 
 Beispiel:
 
 ```svg
-<svg viewBox="-250 -250 500 500">
-    <circle cx="0" cy="0" r="100" stroke=" green " stroke-width="10" fill =" yellow " opacity=" 0.5 " />
+<svg width="500" height="500">
+    <circle
+        cx="250"
+        cy="250"
+        r="100"
+        stroke="green"
+        stroke-width="10"
+        fill="yellow"
+        opacity="0.5"
+    />
 </svg>
 ```
 
 Das `<rect>`-Element zeichnet ein **_Rechteck_** auf dem Bildschirm. Es gibt 6 grundlegende Attribute, die die Position und Form der Rechtecke auf dem Bildschirm steuern.
 
-- `x`: Die x-Position der oberen linken Ecke.
-- `y`: Die y-Position der oberen linken Ecke.
-- `width`: Die Breite des Rechtecks. height Die Höhe des Rechtecks.
-- `rx`: Der x-Radius für abgerundete Ecken (wenn nicht festgelegt, wird er auf 0 gesetzt).
-- `ry`: Der y-Radius für abgerundete Ecken (wenn nicht festgelegt, wird er auf 0 gesetzt).
+-   `x`: Die x-Position der oberen linken Ecke.
+-   `y`: Die y-Position der oberen linken Ecke.
+-   `width`: Die Breite des Rechtecks. height Die Höhe des Rechtecks.
+-   `rx`: Der x-Radius für abgerundete Ecken (wenn nicht festgelegt, wird er auf 0 gesetzt).
+-   `ry`: Der y-Radius für abgerundete Ecken (wenn nicht festgelegt, wird er auf 0 gesetzt).
 
 Beispiel:
+
 ```svg
-<svg viewBox="-250 -250 500 500">
-    <rect x="-100" y="-50" width ="100" height ="50" fill ="blue" stroke="red" opacity ="0.5" stroke-width="5px" />
+<svg width="500" height="500">
+    <rect
+        x="100"
+        y="100"
+        width="100"
+        height="50"
+        fill="blue"
+        stroke="red"
+        opacity="0.5"
+        stroke-width="5px"
+    />
 </svg>
 ```
 
@@ -135,19 +151,19 @@ Elemente innerhalb eines <defs>-Tags werden nicht direkt angezeigt, sondern müs
 Beispiel:
 
 ```svg
-<svg viewBox="-250 -250 500 500">
+<svg width="500" height="500">
     <defs>
-        <circle id="smallCircle" cx="0" cy="0" r="50" />
-        <circle id="bigCircle" cx="0" cy="0" r="200" />
+        <circle id="smallCircle" cx="250" cy="250" r="50" />
+        <circle id="bigCircle" cx="250" cy="250" r="200" />
     </defs>
     <use href="#bigCircle" fill="blue" />
     <use href="#smallCircle" fill="red" />
 </svg>
 ```
 
-Bei der Verwendung des `<use>`-Tags können noch zusätzliche Attribute wie Füllfarbe, Positionierung oder Grösse ergäntz werden.
+Bei der Verwendung des `<use>`-Tags können noch zusätzliche Attribute wie Füllfarbe, Positionierung (x=" " und y=" ") oder Grösse ergäntz werden.
 
-### Ausschneiden (Clip)
+### Ausschneiden (clipPath)
 
 Das `<clipPath>`-Element definiert einen Pfad.
 Ein Element, das innerhalb eines Clipping-Pfads liegt, wird angezeigt, während alles ausserhalb des Pfads ausgeblendet wird.
@@ -155,21 +171,151 @@ Ein Element, das innerhalb eines Clipping-Pfads liegt, wird angezeigt, während 
 Beispiel:
 
 ```svg
-<svg viewBox="-250 -250 500 500">
+<svg width="500" height="500">
     <defs>
         <clipPath id="myClip">
-            <circle cx="0" cy="0" r="100" />
+            <circle cx="250" cy="250" r="100" />
         </clipPath>
     </defs>
-    <rect x="-100" y="-50" width="200" height="100" fill="blue" clip-path="url(#myClip)" />
+    <rect
+        x="150"
+        y="200"
+        width="200"
+        height="100"
+        fill="blue"
+        clip-path="url(#myClip)"
+    />
 </svg>
 ```
 
 ### Weitere Formen (Ellipse, Polygon)
 
-### Gruppen und neue Elemente (< use >?)
+Ein `<ellipse>`-Element ist eine allgemeinere Form des < circle >-Elements, bei dem Sie den x- und y-Radius (in der Mathematik oft als Halbachsen bezeichnet) des Kreises separat skalieren können.
+
+-   `rx`: Der x-Radius des Kreises.
+-   `ry`: Der y-Radius des Kreises.
+-   `cx`: Die x-Position des Zentrums des Kreises.
+-   `cy`: Die y-Position des Zentrums des Kreises.
+
+Beispiel:
+
+```svg
+<svg width="500" height="500">
+    <ellipse cx="250" cy="250" rx="20" ry="50" fill="purple" />
+</svg>
+```
+
+Ein `<polygon>`-Element besteht aus geraden Liniensegmenten, die eine Liste von Punkten verbinden. Jeder Punkt muss zwei Zahlen enthalten: eine x-Koordinate und eine y-Koordinate. Die Liste (0,0), (1,1) und (2,2) könnte also als 0, 0 1, 1 2, 2 geschrieben werden. Sie können auch jeden Punkt für bessere Lesbarkeit auf einer neuen Zeile schreiben, wie unten abgebildet.
+Bei Polygonen verbindet der Pfad automatisch den letzten Punkt mit dem ersten, um eine geschlossene Form zu erstellen.
+
+Beispiel:
+
+```svg
+<svg width="500" height="500">
+    <polygon
+        points=" 
+        300 ,250
+        220 ,100
+        150 ,250 
+        "
+        fill="lime"
+        stroke="purple"
+        stroke-width="1"
+    />
+</svg>
+```
+
+### Gruppen (g)
+
+Das `<g>`-Element ist ein Gruppierungselement, das verwendet wird, um mehrere SVG-Elemente zusammenzufassen. Dadurch können Sie Transformationen, Stile oder andere Attribute auf eine Sammlung von SVG-Elementen als Einheit anwenden.
+
+Beispiel:
+
+```svg
+<svg viewBox="-250 -250 500 500">
+    <g fill="white" stroke="green" stroke-width="5">
+        <circle cx="-100" cy="0" r="50" />
+        <rect x="-50" y="-50" width="100" height="100" opacity="0.5" />
+    </g>
+</svg>
+```
+
+Ein Vorteil von Gruppen ist, dass man sie wiederverwenden kann. Dies ist beispielsweise über eine id und das Ihnen bereits bekannte < use >-Tag möglich.
+
+Beispiel:
+
+```svg
+<svg viewBox="-250 -250 500 500">
+    <g id="myGroup" fill="white" stroke="green" stroke-width="5">
+        <circle cx="-100" cy="0" r="50" />
+        <rect x="-50" y="-50" width="100" height="100" opacity="0.5" />
+    </g>
+    <use href="#myGroup" y="100" />
+</svg>
+```
+
+Bei der verwendung von < use > können Sie mit `x=" "` und `y=" "` die x und y Position der verwendeten Gruppe verändern.
+
+TO DOO:
+<svg width="500" height="500">
+<rect height="500" width="500" fill="lightgrey" />
+<circle cx="250" cy="250" r="5" fill="red" />
+<defs>
+<g id="toll" fill="white" stroke="green" stroke-width="5">
+<circle cx="50" cy="50" r="50" />
+<rect x="100" y="0" width="100" height="100" opacity="0.5" />
+</g>
+</defs>
+<use href="#toll" x="250" y="250" transform="rotate(30 250 250) translate()" />
+</svg>
 
 ### Pfade
+
+Ein Pfad ist die allgemeinste Form, die in SVG verwendet werden kann. Mit einem `<path>`-Element können Sie Rechtecke (mit oder ohne abgerundete Ecken), Kreise, Ellipsen, Polylinien und Polygone zeichnen.
+Grundsätzlich können Sie damit jede andere Art von Formen, Bézierkurven (parametrisch modellierte Kurve), quadratische Kurven und vieles mehr erstellen.
+
+Ein Pfad ist durch ein einzelnes Attribut definiert:
+
+-   `d`: Eine Liste von Punkten und anderen Informationen darüber, wie der Pfad gezeichnet werden soll.
+
+Um den Pfad festzulegen, kann man neben den Koordinaten noch weitere Befehle verwenden:
+
+-   `M`: moveto (Bewegung von einem Punkt zum Anderen)
+-   `L`: lineto (Erstellt eine Linie)
+-   `Q`: quadratic Bézier curve (Erstellt eine quadratische Bézierkurve)
+-   `Z`: closepath (Schliesst den Pfad)
+
+Beispiel:
+
+```svg
+<svg width="500" height="500">
+    <path
+        d="M150 250 Q250 150  350 250 L250 100 Z"
+        stroke="green"
+        fill="none"
+        stroke-width="5"
+    />
+</svg>
+```
+
+Sind die Befehle in Grossbuchstaben geschrieben (wie oben), so müssen die Koordinaten wie im verwendeten Koordinatensystem angegeben werden.
+Wenn die Befehle mit Kleinbuchstaben geschrieben werden, so werden die Koordinaten relativ interpretiert. Das heisst, dass in Abhängigkeit vom zuletzt verwendeten Standpunkt weiter gezeichnet wird.
+
+Beispiel absolut:
+
+```svg
+<path d="M150 250 L350 250 L250 100 Z"
+  stroke="green" fill="none" stroke-width="5" />
+</svg>
+```
+
+Beispiel relativ:
+
+```svg
+<path d="M150 250 l200 0 l-100 -100 z"
+  stroke="green" fill="none" stroke-width="5" />
+</svg>
+```
 
 ### Animationen
 
@@ -177,7 +323,37 @@ Beispiel:
 
 Wenn alles aufgesetzt ist, können Sie die folgenden Aufgaben bearbeiten, um
 einen guten Einstieg ins Projekt zu bekommen.
+Arbeiten Sie mit einem 500 x 500 grossen Koordinatensystem, wenn nicht anders verlangt.
 
-### Aufgabe 01: Kreis zentrieren
+### Aufgabe 01: Kreis
 
-Zentrieren Sie den Kreis in dem Bild.
+Zeichnen Sie einen blau gefüllten Kreis mit grünem Rand und Radius 30 Pixel. Probieren Sie verschiedene Deckkraft Stärken aus.
+
+### Aufgabe 02: Mehrere Kreise
+
+Zeichnen Sie drei Kreise in einer Reihe, die sich berühren und von links nach rechts kleiner werden. Die Kreise sollten alle unterschiedliche Füllfarben haben.
+
+### Aufgabe 03: Kreis und Quadrat
+
+-   Erstellen Sie einen zentrierten Kreis von Radius 50.
+    Der Kreis soll einen 10 Pixel breiten roten Rand haben.
+-   Zeichnen Sie um Ihren Kreis ein Quadrat, welches den Rand des Kreises berührt.
+
+### Aufgabe 04: Quadrate
+
+Bild von Aufgabe 5 und 6 aus Skript.
+
+### Aufgabe 05: Ellipse
+
+-   Nutzen Sie das < defs >-Tag, um eine flache Ellipse zu definieren.
+-   Schichten Sie drei verschieden farbige Ellipsen übereinander. Diese sollen sich nur berühren, nicht überschneiden.
+
+### Aufgabe 06: clipPath
+
+### Aufgabe 07: Gruppen
+
+### Aufgabe 08: Pfad absolute Koordinaten
+
+### Aufgabe 09: Pfad absolute und relative Koordinaten
+
+selbe Figur zentriert mit path und einmal relativ und einmal absolut
