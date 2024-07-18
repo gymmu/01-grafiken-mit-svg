@@ -93,37 +93,55 @@ Das viewBox-Attribut wird im < svg >-Element definiert und besteht aus vier Wert
 
 Das `<circle>`-Element zeichnet einen **_Kreis_** auf dem Bildschirm. Es verwendet drei grundlegende Attribute, um Form und Grösse des Elements zu bestimmen:
 
-- `r`: Der Radius des Kreises.
-- `cx`: Die x-Position des Zentrums des Kreises.
-- `cy`: Die y-Position des Zentrums des Kreises.
+-   `r`: Der Radius des Kreises.
+-   `cx`: Die x-Position des Zentrums des Kreises.
+-   `cy`: Die y-Position des Zentrums des Kreises.
 
 Zusätzlich dazu gibt es noch eine Reihe von anderen Attributen, die festgelegt werden können. Diese Attribute können für jede SVG-Form festgelegt werden.
 
-- `fill`: Die Füllfarbe.
-- `stroke`: Die Strichfarbe.
-- `stroke-width`: Die Strichbreite.
-- `opacity`: Die Deckkraft der Form.
+-   `fill`: Die Füllfarbe.
+-   `stroke`: Die Strichfarbe.
+-   `stroke-width`: Die Strichbreite.
+-   `opacity`: Die Deckkraft der Form.
 
 Beispiel:
 
 ```svg
 <svg viewBox="-250 -250 500 500">
-    <circle cx="0" cy="0" r="100" stroke=" green " stroke-width="10" fill =" yellow " opacity=" 0.5 " />
+    <circle
+        cx="0"
+        cy="0"
+        r="100"
+        stroke=" green "
+        stroke-width="10"
+        fill=" yellow "
+        opacity=" 0.5 "
+    />
 </svg>
 ```
 
 Das `<rect>`-Element zeichnet ein **_Rechteck_** auf dem Bildschirm. Es gibt 6 grundlegende Attribute, die die Position und Form der Rechtecke auf dem Bildschirm steuern.
 
-- `x`: Die x-Position der oberen linken Ecke.
-- `y`: Die y-Position der oberen linken Ecke.
-- `width`: Die Breite des Rechtecks. height Die Höhe des Rechtecks.
-- `rx`: Der x-Radius für abgerundete Ecken (wenn nicht festgelegt, wird er auf 0 gesetzt).
-- `ry`: Der y-Radius für abgerundete Ecken (wenn nicht festgelegt, wird er auf 0 gesetzt).
+-   `x`: Die x-Position der oberen linken Ecke.
+-   `y`: Die y-Position der oberen linken Ecke.
+-   `width`: Die Breite des Rechtecks. height Die Höhe des Rechtecks.
+-   `rx`: Der x-Radius für abgerundete Ecken (wenn nicht festgelegt, wird er auf 0 gesetzt).
+-   `ry`: Der y-Radius für abgerundete Ecken (wenn nicht festgelegt, wird er auf 0 gesetzt).
 
 Beispiel:
+
 ```svg
 <svg viewBox="-250 -250 500 500">
-    <rect x="-100" y="-50" width ="100" height ="50" fill ="blue" stroke="red" opacity ="0.5" stroke-width="5px" />
+    <rect
+        x="-100"
+        y="-50"
+        width="100"
+        height="50"
+        fill="blue"
+        stroke="red"
+        opacity="0.5"
+        stroke-width="5px"
+    />
 </svg>
 ```
 
@@ -161,7 +179,14 @@ Beispiel:
             <circle cx="0" cy="0" r="100" />
         </clipPath>
     </defs>
-    <rect x="-100" y="-50" width="200" height="100" fill="blue" clip-path="url(#myClip)" />
+    <rect
+        x="-100"
+        y="-50"
+        width="200"
+        height="100"
+        fill="blue"
+        clip-path="url(#myClip)"
+    />
 </svg>
 ```
 
@@ -169,20 +194,40 @@ Beispiel:
 
 Ein `<ellipse>`-Element ist eine allgemeinere Form des < circle >-Elements, bei dem Sie den x- und y-Radius (in der Mathematik oft als Halbachsen bezeichnet) des Kreises separat skalieren können.
 
-- `rx`: Der x-Radius des Kreises.
-- `ry`: Der y-Radius des Kreises.
-- `cx`: Die x-Position des Zentrums des Kreises.
-- `cy`: Die y-Position des Zentrums des Kreises.
+-   `rx`: Der x-Radius des Kreises.
+-   `ry`: Der y-Radius des Kreises.
+-   `cx`: Die x-Position des Zentrums des Kreises.
+-   `cy`: Die y-Position des Zentrums des Kreises.
 
 Beispiel:
 
-    <svg viewBox="-250 -250 500 500">
-        <ellipse cx="30" cy="60" rx ="20" ry ="50" fill ="purple" />
+```svg
+<svg viewBox="-250 -250 500 500">
+       <ellipse cx="30" cy="60" rx="20" ry="50" fill="purple" />
+   </svg>
+```
+
+Ein `<polygon>`-Element besteht aus geraden Liniensegmenten, die eine Liste von Punkten verbinden. Jeder Punkt muss zwei Zahlen enthalten: eine x-Koordinate und eine y-Koordinate. Die Liste (0,0), (1,1) und (2,2) könnte also als 0, 0 1, 1 2, 2 geschrieben werden. Sie können auch jeden Punkt für bessere Lesbarkeit auf einer neuen Zeile schreiben, wie unten abgebildet.
+Bei Polygonen verbindet der Pfad automatisch den letzten Punkt mit dem ersten, um eine geschlossene Form zu erstellen.
+
+Beispiel:
+
+```svg
+<svg viewBox="-250 -250 500 500">
+        <polygon
+        points=" 
+            100 ,0
+            0 ,-100
+            -100 ,0 
+            "
+        fill="lime"
+        stroke=" purple "
+        stroke-width="1"
+    />
     </svg>
+```
 
-Ein `<polygon>`-Element besteht aus geraden Liniensegmenten, die eine Liste von Punkten verbinden. Bei Polygonen verbindet der Pfad jedoch automatisch den letzten Punkt mit dem ersten, um eine geschlossene Form zu erstellen.
-
-### Gruppen und neue Elemente
+### Gruppen
 
 ### Pfade
 
