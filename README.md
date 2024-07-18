@@ -69,7 +69,7 @@ Beispiel:
 
 `width="100"` und `height="100"` sind zwei Attribute mit zugehörigem Wert, welche die Grösse der SVG-Grafik beeinflussen.
 
-### Koordinatensystem (viewBox)
+### Koordinatensystem
 
 Wenn Sie mit SVG arbeiten, so orientieren Sie sich stets an einem Koordinatensystem:
 ![](koord.png)
@@ -278,16 +278,42 @@ Ein Pfad ist durch ein einzelnes Attribut definiert:
 
 -   `d`: Eine Liste von Punkten und anderen Informationen darüber, wie der Pfad gezeichnet werden soll.
 
+Um den Pfad festzulegen, kann man neben den Koordinaten noch weitere Befehle verwenden:
+
+-   `M`: moveto (Bewegung von einem Punkt zum Anderen)
+-   `L`: lineto (Erstellt eine Linie)
+-   `Q`: quadratic Bézier curve (Erstellt eine quadratische Bézierkurve)
+-   `Z`: closepath (Schliesst den Pfad)
+
 Beispiel:
 
 ```svg
-<svg width="500" height="500"> 
+<svg width="500" height="500">
     <path
-        d="M20 230 Q40 205 50 230 T90 230"
+        d="M150 250 Q250 150  350 250 L250 100 Z"
+        stroke="green"
         fill="none"
-        stroke="blue"
-        width="5"
+        stroke-width="5"
     />
+</svg>
+```
+
+Sind die Befehle in Grossbuchstaben geschrieben (wie oben), so müssen die Koordinaten wie im verwendeten Koordinatensystem angegeben werden.
+Wenn die Befehle mit Kleinbuchstaben geschrieben werden, so werden die Koordinaten relativ interpretiert. Das heisst, dass in Abhängigkeit vom zuletzt verwendeten Standpunkt weiter gezeichnet wird.
+
+Beispiel absolut:
+
+```svg
+<path d="M150 250 L350 250 L250 100 Z"
+  stroke="green" fill="none" stroke-width="5" />
+</svg>
+```
+
+Beispiel relativ:
+
+```svg
+<path d="M150 250 l200 0 l-100 -100 z"
+  stroke="green" fill="none" stroke-width="5" />
 </svg>
 ```
 
@@ -301,3 +327,7 @@ einen guten Einstieg ins Projekt zu bekommen.
 ### Aufgabe 01: Kreis zentrieren
 
 Zentrieren Sie den Kreis in dem Bild.
+
+### Aufgabe 10: absolute und relative Koordinaten
+
+selbe Figur zentriert mit path und einmal relativ und einmal absolut
