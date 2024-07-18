@@ -203,8 +203,8 @@ Beispiel:
 
 ```svg
 <svg viewBox="-250 -250 500 500">
-       <ellipse cx="30" cy="60" rx="20" ry="50" fill="purple" />
-   </svg>
+    <ellipse cx="30" cy="60" rx="20" ry="50" fill="purple" />
+</svg>
 ```
 
 Ein `<polygon>`-Element besteht aus geraden Liniensegmenten, die eine Liste von Punkten verbinden. Jeder Punkt muss zwei Zahlen enthalten: eine x-Koordinate und eine y-Koordinate. Die Liste (0,0), (1,1) und (2,2) könnte also als 0, 0 1, 1 2, 2 geschrieben werden. Sie können auch jeden Punkt für bessere Lesbarkeit auf einer neuen Zeile schreiben, wie unten abgebildet.
@@ -214,20 +214,49 @@ Beispiel:
 
 ```svg
 <svg viewBox="-250 -250 500 500">
-        <polygon
+    <polygon
         points=" 
-            100 ,0
-            0 ,-100
-            -100 ,0 
-            "
+        100 ,0
+        0 ,-100
+        -100 ,0 
+        "
         fill="lime"
         stroke=" purple "
         stroke-width="1"
     />
-    </svg>
+</svg>
 ```
 
-### Gruppen
+### Gruppen (g)
+
+Das `<g>`-Element ist ein Gruppierungselement, das verwendet wird, um mehrere SVG-Elemente zusammenzufassen. Dadurch können Sie Transformationen, Stile oder andere Attribute auf eine Sammlung von SVG-Elementen als Einheit anwenden.
+
+Beispiel:
+
+```svg
+<svg viewBox="-250 -250 500 500">
+    <g fill="white" stroke="green" stroke-width="5">
+        <circle cx="-100" cy="0" r="50" />
+        <rect x="-50" y="-50" width="100" height="100" opacity="0.5" />
+    </g>
+</svg>
+```
+
+Ein Vorteil von Gruppen ist, dass man sie wiederverwenden kann. Dies ist beispielsweise über eine id und das Ihnen bereits bekannte < use >-Tag möglich.
+
+Beispiel:
+
+```svg
+<svg viewBox="-250 -250 500 500">
+    <g id="myGroup" fill="white" stroke="green" stroke-width="5">
+        <circle cx="-100" cy="0" r="50" />
+        <rect x="-50" y="-50" width="100" height="100" opacity="0.5" />
+    </g>
+    <use href="#myGroup" y="100" />
+</svg>
+```
+
+Bei der verwendung von < use > können Sie mit `x=" "` und `y=" "` die x und y Position der verwendeten Gruppe verändern.
 
 ### Pfade
 
