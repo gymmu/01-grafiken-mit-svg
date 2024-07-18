@@ -110,10 +110,10 @@ Beispiel:
         cx="250"
         cy="250"
         r="100"
-        stroke=" green "
+        stroke="green"
         stroke-width="10"
-        fill=" yellow "
-        opacity=" 0.5 "
+        fill="yellow"
+        opacity="0.5"
     />
 </svg>
 ```
@@ -161,7 +161,7 @@ Beispiel:
 </svg>
 ```
 
-Bei der Verwendung des `<use>`-Tags können noch zusätzliche Attribute wie Füllfarbe, Positionierung oder Grösse ergäntz werden.
+Bei der Verwendung des `<use>`-Tags können noch zusätzliche Attribute wie Füllfarbe, Positionierung (x=" " und y=" ") oder Grösse ergäntz werden.
 
 ### Ausschneiden (clipPath)
 
@@ -219,7 +219,7 @@ Beispiel:
         150 ,250 
         "
         fill="lime"
-        stroke=" purple "
+        stroke="purple"
         stroke-width="1"
     />
 </svg>
@@ -323,11 +323,37 @@ Beispiel relativ:
 
 Wenn alles aufgesetzt ist, können Sie die folgenden Aufgaben bearbeiten, um
 einen guten Einstieg ins Projekt zu bekommen.
+Arbeiten Sie mit einem 500 x 500 grossen Koordinatensystem, wenn nicht anders verlangt.
 
-### Aufgabe 01: Kreis zentrieren
+### Aufgabe 01: Kreis
 
-Zentrieren Sie den Kreis in dem Bild.
+Zeichnen Sie einen blau gefüllten Kreis mit grünem Rand und Radius 30 Pixel. Probieren Sie verschiedene Deckkraft Stärken aus.
 
-### Aufgabe 10: absolute und relative Koordinaten
+### Aufgabe 02: Mehrere Kreise
+
+Zeichnen Sie drei Kreise in einer Reihe, die sich berühren und von links nach rechts kleiner werden. Die Kreise sollten alle unterschiedliche Füllfarben haben.
+
+### Aufgabe 03: Kreis und Quadrat
+
+-   Erstellen Sie einen zentrierten Kreis von Radius 50.
+    Der Kreis soll einen 10 Pixel breiten roten Rand haben.
+-   Zeichnen Sie um Ihren Kreis ein Quadrat, welches den Rand des Kreises berührt.
+
+### Aufgabe 04: Quadrate
+
+Bild von Aufgabe 5 und 6 aus Skript.
+
+### Aufgabe 05: Ellipse
+
+-   Nutzen Sie das < defs >-Tag, um eine flache Ellipse zu definieren.
+-   Schichten Sie drei verschieden farbige Ellipsen übereinander. Diese sollen sich nur berühren, nicht überschneiden.
+
+### Aufgabe 06: clipPath
+
+### Aufgabe 07: Gruppen
+
+### Aufgabe 08: Pfad absolute Koordinaten
+
+### Aufgabe 09: Pfad absolute und relative Koordinaten
 
 selbe Figur zentriert mit path und einmal relativ und einmal absolut
