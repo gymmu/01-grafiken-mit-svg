@@ -21,6 +21,9 @@ export default class Website {
         this.#body = dom.window.document.body
     }
 
+    /**
+     * Get the body of the HTML-DOM.
+     */
     get body() {
         return this.#body
     }

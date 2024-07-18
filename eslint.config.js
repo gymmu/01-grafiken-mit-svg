@@ -6,7 +6,7 @@ export default [
         rules: {
             semi: 'off',
             'prefer-const': 'error',
-            'no-unused-vars': 'warn'
+            'no-unused-vars': 'error'
         },
         languageOptions: {
             globals: [globals.browser, 'process']

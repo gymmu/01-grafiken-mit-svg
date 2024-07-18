@@ -4,23 +4,28 @@
     "main": "vite.config.js",
     "type": "module",
     "dependencies": {
+        "@eslint/js": "^9.7.0",
         "@prettier/plugin-xml": "^3.4.1",
         "@testing-library/dom": "^10.3.2",
+        "@testing-library/react": "^16.0.0",
+        "@vitejs/plugin-react": "^4.3.1",
         "@vitest/ui": "^2.0.3",
         "esbuild": "^0.21.5",
+        "eslint": "^9.7.0",
+        "globals": "^15.8.0",
         "jsdom": "^24.1.0",
         "nanoid": "^3.3.7",
         "picocolors": "^1.0.1",
         "postcss": "^8.4.39",
         "prettier": "^3.3.3",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "rollup": "^4.18.1",
         "source-map-js": "^1.2.0",
         "vite": "^5.3.3",
         "vite-plugin-full-reload": "^1.2.0",
-        "vitest": "^2.0.3",
-        "@eslint/js": "^9.7.0",
-        "eslint": "^9.7.0",
-        "globals": "^15.8.0"
+        "vite-plugin-svgr": "^4.2.0",
+        "vitest": "^2.0.3"
     },
     "scripts": {
         "start": "vite",
@@ -30,6 +35,5 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "description": "",
-    "devDependencies": {}
+    "description": ""
 }

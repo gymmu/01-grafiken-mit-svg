@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test } from 'vitest'
-import Website from './tests/utils/website.js'
+import Website from './utils/website.js'
 
 describe('index.html', () => {
     let body
