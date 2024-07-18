@@ -74,20 +74,18 @@ Beispiel:
 Wenn Sie mit SVG arbeiten, so orientieren Sie sich stets an einem Koordinatensystem:
 ![](koord.png)
 
-Das viewBox-Attribut ist ein mächtiges Werkzeug in SVG, das es ermöglicht, eine flexible und skalierbare Sichtfensteransicht für die Grafik zu definieren.
-Es legt den Bereich der SVG-Zeichenfläche fest, der sichtbar ist, und wie dieser Bereich an die Grösse des < svg >-Elements angepasst wird. Dadurch wird eine Koordinatensystemtransformation durchgeführt, sodass der spezifizierte Bereich auf die tatsächliche Anzeigefläche des SVG skaliert wird.
+Wie Sie sehen, befindet sich der Koordinatenursprung (0,0) in der oberen linken Ecke. Von dort aus können die positiven x-Koordinaten nach rechts und die positiven y-Koordinaten nach unten abgelesen werden.
 
-Das viewBox-Attribut wird im < svg >-Element definiert und besteht aus vier Werten:
+Die Grösse des Koordinatensystems können Sie über folgende zwei Attribute im < svg >-Tag festlegen:
 
-    viewBox="min-x min-y width height"
+-   `width`: wird verwendet, um die Breite des Koordinatensystems festzulegen.
+-   `height`: wird verwendet, um die Höhe des Koordinatensystems festzulegen.
 
-`min-x` wird verwendet, um die horizontale Achse festzulegen. Man kann die Grafik auf einer horizontalen Achse verschieben (d.h. links und rechts).
+Bei den zu lösenden Aufgaben werden Sie im normalfall mit folgenden Attributwerten arbeiten:
 
-`min-y` wird verwendet, um die vertikale Achse festzulegen. Man kann die Grafik auf einer vertikalen Achse verschieben (d.h. nach oben und unten).
-
-`width` wird verwendet, um die Gesamtbreite der viewBox festzulegen.
-
-`height` wird verwendet, um die Gesamthöhe der viewBox festzulegen.
+```svg
+<svg width="500" height="500">
+```
 
 ### Formen (Kreis und Rechteck)
 
@@ -107,10 +105,10 @@ Zusätzlich dazu gibt es noch eine Reihe von anderen Attributen, die festgelegt 
 Beispiel:
 
 ```svg
-<svg viewBox="-250 -250 500 500">
+<svg width="500" height="500">
     <circle
-        cx="0"
-        cy="0"
+        cx="250"
+        cy="250"
         r="100"
         stroke=" green "
         stroke-width="10"
@@ -131,10 +129,10 @@ Das `<rect>`-Element zeichnet ein **_Rechteck_** auf dem Bildschirm. Es gibt 6 g
 Beispiel:
 
 ```svg
-<svg viewBox="-250 -250 500 500">
+<svg width="500" height="500">
     <rect
-        x="-100"
-        y="-50"
+        x="100"
+        y="100"
         width="100"
         height="50"
         fill="blue"
@@ -153,10 +151,10 @@ Elemente innerhalb eines <defs>-Tags werden nicht direkt angezeigt, sondern müs
 Beispiel:
 
 ```svg
-<svg viewBox="-250 -250 500 500">
+<svg width="500" height="500">
     <defs>
-        <circle id="smallCircle" cx="0" cy="0" r="50" />
-        <circle id="bigCircle" cx="0" cy="0" r="200" />
+        <circle id="smallCircle" cx="250" cy="250" r="50" />
+        <circle id="bigCircle" cx="250" cy="250" r="200" />
     </defs>
     <use href="#bigCircle" fill="blue" />
     <use href="#smallCircle" fill="red" />
@@ -173,15 +171,15 @@ Ein Element, das innerhalb eines Clipping-Pfads liegt, wird angezeigt, während 
 Beispiel:
 
 ```svg
-<svg viewBox="-250 -250 500 500">
+<svg width="500" height="500">
     <defs>
         <clipPath id="myClip">
-            <circle cx="0" cy="0" r="100" />
+            <circle cx="250" cy="250" r="100" />
         </clipPath>
     </defs>
     <rect
-        x="-100"
-        y="-50"
+        x="150"
+        y="200"
         width="200"
         height="100"
         fill="blue"
@@ -202,8 +200,8 @@ Ein `<ellipse>`-Element ist eine allgemeinere Form des < circle >-Elements, bei 
 Beispiel:
 
 ```svg
-<svg viewBox="-250 -250 500 500">
-    <ellipse cx="30" cy="60" rx="20" ry="50" fill="purple" />
+<svg width="500" height="500">
+    <ellipse cx="250" cy="250" rx="20" ry="50" fill="purple" />
 </svg>
 ```
 
@@ -213,12 +211,12 @@ Bei Polygonen verbindet der Pfad automatisch den letzten Punkt mit dem ersten, u
 Beispiel:
 
 ```svg
-<svg viewBox="-250 -250 500 500">
+<svg width="500" height="500">
     <polygon
         points=" 
-        100 ,0
-        0 ,-100
-        -100 ,0 
+        300 ,250
+        220 ,100
+        150 ,250 
         "
         fill="lime"
         stroke=" purple "
@@ -258,7 +256,40 @@ Beispiel:
 
 Bei der verwendung von < use > können Sie mit `x=" "` und `y=" "` die x und y Position der verwendeten Gruppe verändern.
 
+TO DOO:
+<svg width="500" height="500">
+<rect height="500" width="500" fill="lightgrey" />
+<circle cx="250" cy="250" r="5" fill="red" />
+<defs>
+<g id="toll" fill="white" stroke="green" stroke-width="5">
+<circle cx="50" cy="50" r="50" />
+<rect x="100" y="0" width="100" height="100" opacity="0.5" />
+</g>
+</defs>
+<use href="#toll" x="250" y="250" transform="rotate(30 250 250) translate()" />
+</svg>
+
 ### Pfade
+
+Ein Pfad ist die allgemeinste Form, die in SVG verwendet werden kann. Mit einem `<path>`-Element können Sie Rechtecke (mit oder ohne abgerundete Ecken), Kreise, Ellipsen, Polylinien und Polygone zeichnen.
+Grundsätzlich können Sie damit jede andere Art von Formen, Bézierkurven (parametrisch modellierte Kurve), quadratische Kurven und vieles mehr erstellen.
+
+Ein Pfad ist durch ein einzelnes Attribut definiert:
+
+-   `d`: Eine Liste von Punkten und anderen Informationen darüber, wie der Pfad gezeichnet werden soll.
+
+Beispiel:
+
+```svg
+<svg width="500" height="500"> 
+    <path
+        d="M20 230 Q40 205 50 230 T90 230"
+        fill="none"
+        stroke="blue"
+        width="5"
+    />
+</svg>
+```
 
 ### Animationen
 
