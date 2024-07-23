@@ -21,13 +21,19 @@ img.fg {
 }
 
 img.bg {
-    opacity: 0.2;
     z-index: 5;
+    opacity: 0.2;
 }
 
 img.fg {
     opacity: 1;
     z-index: 10;
+}
+
+img.bg.show-diff {
+    z-index: 15;
+    opacity: 0.5;
+    filter: invert(100%);
 }
 
 main {
@@ -37,4 +43,11 @@ main {
     margin: auto;
     display: flex;
     flex-direction: column;
+}
+
+.ex-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
