@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="500" version="1.1" width="500">
+  <clipPath id="clippy">
+    <circle cx="250" cy="250" r="120" />
+  </clipPath>
+  <rect
+    clip-path="url(#clippy)"
+    fill="cyan"
+    height="200"
+    width="200"
+    x="150"
+    y="150"
+  />
+</svg>

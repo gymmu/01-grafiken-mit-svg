@@ -240,7 +240,8 @@ Beispiel:
 </svg>
 ```
 
-Ein Vorteil von Gruppen ist, dass man sie wiederverwenden kann. Dies ist beispielsweise über eine id und das Ihnen bereits bekannte < use >-Tag möglich.
+Ein Vorteil von Gruppen ist, dass man sie wiederverwenden kann. Dies ist
+beispielsweise über eine id und das Ihnen bereits bekannte `<use>`-Tag möglich.
 
 Beispiel:
 
@@ -254,7 +255,7 @@ Beispiel:
 </svg>
 ```
 
-Bei der verwendung von < use > können Sie mit `x=" "` und `y=" "` die x und y Position der verwendeten Gruppe verändern.
+Bei der verwendung von `<use>` können Sie mit `x=" "` und `y=" "` die x und y Position der verwendeten Gruppe verändern.
 
 TO DOO:
 <svg width="500" height="500">
@@ -345,7 +346,7 @@ Bild von Aufgabe 5 und 6 aus Skript.
 
 ### Aufgabe 05: Ellipse
 
--   Nutzen Sie das < defs >-Tag, um eine flache Ellipse zu definieren.
+-   Nutzen Sie das `<defs>`-Tag, um eine flache Ellipse zu definieren.
 -   Schichten Sie drei verschieden farbige Ellipsen übereinander. Diese sollen sich nur berühren, nicht überschneiden.
 
 ### Aufgabe 06: clipPath
