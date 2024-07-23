@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- add favicon -->
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <title>Eigene Webseite</title>
+        <title>SVG Bilder</title>
 
         <link rel="stylesheet" href="style.css" />
         <script src="src/script.js" type="module"></script>
@@ -14,15 +14,32 @@
 
     <body>
         <main>
-            <h1>Hello World!</h1>
-            <div>
+            <h1>Bilder mit SVG erstellen</h1>
+            <div class="ex-container">
                 <div class="ex-header">
                     <h2>Aufgabe 01</h2>
-                    <button class="toggle-diff-btn">Vergleich</button>
+                    <div>
+                        <button class="toggle-visible">Verbergen</button>
+                        <button class="toggle-diff-btn">Vergleich</button>
+                    </div>
                 </div>
-                <div class="img-container">
+                <div class="img-container fade-in">
                     <img class="fg" src="images/aufgabe-01.svg" />
                     <img class="bg" src="images/loesung-01.png" />
+                </div>
+            </div>
+
+            <div class="ex-container">
+                <div class="ex-header">
+                    <h2>Aufgabe 02</h2>
+                    <div>
+                        <button class="toggle-visible">Verbergen</button>
+                        <button class="toggle-diff-btn">Vergleich</button>
+                    </div>
+                </div>
+                <div class="img-container fade-out">
+                    <img class="fg" src="images/aufgabe-02.svg" />
+                    <img class="bg" src="images/loesung-02.png" />
                 </div>
             </div>
         </main>
