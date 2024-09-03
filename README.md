@@ -51,21 +51,25 @@ Zudem unterstützt SVG interaktive Elemente und Animationen, die direkt in die G
 
 ### Tags und Attribute
 
-**_Tags_** sind die grundlegenden Bausteine in SVG-Grafiken (wie auch in HTML) , die die Struktur und den Inhalt einer Datei definieren. Tags werden durch öffnende (< >) und schliessende(</ >) Winkelklammern markiert und haben einem Namen, der den Typ des Elements spezifiziert.
+**_Tags_** sind die grundlegenden Bausteine in SVG-Grafiken (wie auch in HTML) , die die Struktur und den Inhalt einer Datei definieren. Tags werden durch öffnende (`<>`) und schliessende(`</>`) Winkelklammern markiert und haben einem Namen, der den Typ des Elements spezifiziert.
 
-Beispiel:
-
-    <svg width="100" height="100">
-        <!-- Weitere SVG-Elemente -->
-    </svg>
+> **Beispiel:**
+>
+> ```svg
+> <svg width="100" height="100">
+>    <!-- Weitere SVG-Elemente -->
+> </svg>
+> ```
 
 `<svg>` ist das Wurzelelement, das die gesamte SVG-Grafik umschliesst.
 
-**_Attribute_** sind zusätzliche Informationen, die innerhalb eines Tags spezifiziert werden, um die Eigenschaften des Elements zu definieren. Jedes Attribut besteht aus einem Namen und einem Wert, die durch ein Gleichheitszeichen (=) verbunden und in Anführungszeichen gesetzt sind.
+**_Attribute_** sind zusätzliche Informationen, die innerhalb eines Tags spezifiziert werden, um die Eigenschaften des Elements zu definieren. Jedes Attribut besteht aus einem Namen und einem Wert, die durch ein Gleichheitszeichen (`=`) verbunden und in Anführungszeichen gesetzt sind.
 
-Beispiel:
-
-    <svg width="100" height="100">
+> **Beispiel:**
+>
+> ```svg
+> <svg width="100" height="100">
+> ```
 
 `width="100"` und `height="100"` sind zwei Attribute mit zugehörigem Wert, welche die Grösse der SVG-Grafik beeinflussen.
 
@@ -74,9 +78,9 @@ Beispiel:
 Wenn Sie mit SVG arbeiten, so orientieren Sie sich stets an einem Koordinatensystem:
 ![](koord.png)
 
-Wie Sie sehen, befindet sich der Koordinatenursprung (0,0) in der oberen linken Ecke. Von dort aus können die positiven x-Koordinaten nach rechts und die positiven y-Koordinaten nach unten abgelesen werden.
+Wie Sie sehen, befindet sich der Koordinatenursprung `(0,0)` in der oberen linken Ecke. Von dort aus können die positiven x-Koordinaten nach rechts und die positiven y-Koordinaten nach unten abgelesen werden.
 
-Die Grösse des Koordinatensystems können Sie über folgende zwei Attribute im < svg >-Tag festlegen:
+Die Grösse des Koordinatensystems können Sie über folgende zwei Attribute im `<svg>`-Tag festlegen:
 
 -   `width`: wird verwendet, um die Breite des Koordinatensystems festzulegen.
 -   `height`: wird verwendet, um die Höhe des Koordinatensystems festzulegen.
@@ -161,7 +165,7 @@ Beispiel:
 </svg>
 ```
 
-Bei der Verwendung des `<use>`-Tags können noch zusätzliche Attribute wie Füllfarbe, Positionierung (x=" " und y=" ") oder Grösse ergäntz werden.
+Bei der Verwendung des `<use>`-Tags können noch zusätzliche Attribute wie Füllfarbe, Positionierung (`x=" "` und `y=" "`) oder Grösse ergäntz werden.
 
 ### Ausschneiden (clipPath)
 
@@ -190,12 +194,12 @@ Beispiel:
 
 ### Weitere Formen (Ellipse, Polygon)
 
-Ein `<ellipse>`-Element ist eine allgemeinere Form des < circle >-Elements, bei dem Sie den x- und y-Radius (in der Mathematik oft als Halbachsen bezeichnet) des Kreises separat skalieren können.
+Ein `<ellipse>`-Element ist eine allgemeinere Form des `<circle>`-Elements, bei dem Sie den `x`- und `y`-Radius (in der Mathematik oft als Halbachsen bezeichnet) des Kreises separat skalieren können.
 
--   `rx`: Der x-Radius des Kreises.
--   `ry`: Der y-Radius des Kreises.
--   `cx`: Die x-Position des Zentrums des Kreises.
--   `cy`: Die y-Position des Zentrums des Kreises.
+-   `rx`: Der `x`-Radius des Kreises.
+-   `ry`: Der `y`-Radius des Kreises.
+-   `cx`: Die `x`-Position des Zentrums des Kreises.
+-   `cy`: Die `y`-Position des Zentrums des Kreises.
 
 Beispiel:
 
@@ -205,7 +209,7 @@ Beispiel:
 </svg>
 ```
 
-Ein `<polygon>`-Element besteht aus geraden Liniensegmenten, die eine Liste von Punkten verbinden. Jeder Punkt muss zwei Zahlen enthalten: eine x-Koordinate und eine y-Koordinate. Die Liste (0,0), (1,1) und (2,2) könnte also als 0, 0 1, 1 2, 2 geschrieben werden. Sie können auch jeden Punkt für bessere Lesbarkeit auf einer neuen Zeile schreiben, wie unten abgebildet.
+Ein `<polygon>`-Element besteht aus geraden Liniensegmenten, die eine Liste von Punkten verbinden. Jeder Punkt muss zwei Zahlen enthalten: eine x-Koordinate und eine y-Koordinate. Die Liste `(0,0)`, `(1,1)` und `(2,2)` könnte also als `0, 0 1, 1 2, 2` geschrieben werden. Sie können auch jeden Punkt für bessere Lesbarkeit auf einer neuen Zeile schreiben, wie unten abgebildet.
 Bei Polygonen verbindet der Pfad automatisch den letzten Punkt mit dem ersten, um eine geschlossene Form zu erstellen.
 
 Beispiel:
@@ -214,9 +218,9 @@ Beispiel:
 <svg width="500" height="500">
     <polygon
         points=" 
-        300 ,250
-        220 ,100
-        150 ,250 
+        300, 250
+        220, 100
+        150, 250 
         "
         fill="lime"
         stroke="purple"
@@ -232,43 +236,47 @@ Das `<g>`-Element ist ein Gruppierungselement, das verwendet wird, um mehrere SV
 Beispiel:
 
 ```svg
-<svg viewBox="-250 -250 500 500">
+<svg viewBox="500 500">
     <g fill="white" stroke="green" stroke-width="5">
-        <circle cx="-100" cy="0" r="50" />
-        <rect x="-50" y="-50" width="100" height="100" opacity="0.5" />
+        <circle cx="100" cy="0" r="50" />
+        <rect x="50" y="50" width="100" height="100" opacity="0.5" />
     </g>
 </svg>
 ```
 
 Ein Vorteil von Gruppen ist, dass man sie wiederverwenden kann. Dies ist
-beispielsweise über eine id und das Ihnen bereits bekannte `<use>`-Tag möglich.
+beispielsweise über eine `id` und das Ihnen bereits bekannte `<use>`-Tag möglich.
 
 Beispiel:
 
 ```svg
-<svg viewBox="-250 -250 500 500">
+<svg viewBox="500 500">
     <g id="myGroup" fill="white" stroke="green" stroke-width="5">
-        <circle cx="-100" cy="0" r="50" />
-        <rect x="-50" y="-50" width="100" height="100" opacity="0.5" />
+        <circle cx="100" cy="0" r="50" />
+        <rect x="50" y="50" width="100" height="100" opacity="0.5" />
     </g>
     <use href="#myGroup" y="100" />
 </svg>
 ```
 
-Bei der verwendung von `<use>` können Sie mit `x=" "` und `y=" "` die x und y Position der verwendeten Gruppe verändern.
+Wenn wir ein Element mit `<use>` wieder verwenden möchten, und es neu platzieren
+oder rotieren möchten. Dann können wir das Attribut `transform` verwenden. Hier
+ist wichtig das wir die Reihenfolge der Operationen in `transform` beachten. Am
+besten zuerst verschieben und dann rotieren.
 
-TO DOO:
+Beispiel:
+
+```svg
 <svg width="500" height="500">
-<rect height="500" width="500" fill="lightgrey" />
-<circle cx="250" cy="250" r="5" fill="red" />
-<defs>
-<g id="toll" fill="white" stroke="green" stroke-width="5">
-<circle cx="50" cy="50" r="50" />
-<rect x="100" y="0" width="100" height="100" opacity="0.5" />
-</g>
-</defs>
-<use href="#toll" x="250" y="250" transform="rotate(30 250 250) translate()" />
+    <defs>
+        <g id="toll" fill="white" stroke="green" stroke-width="5">
+            <circle cx="50" cy="50" r="50" />
+            <rect x="100" y="0" width="100" height="100" opacity="0.5" />
+        </g>
+    </defs>
+    <use href="#toll" transform="translate(250 250) rotate(90)" />
 </svg>
+```
 
 ### Pfade
 
@@ -291,7 +299,7 @@ Beispiel:
 ```svg
 <svg width="500" height="500">
     <path
-        d="M150 250 Q250 150  350 250 L250 100 Z"
+        d="M 150 250 Q 250 150  350 250 L 250 100 Z"
         stroke="green"
         fill="none"
         stroke-width="5"
@@ -305,26 +313,78 @@ Wenn die Befehle mit Kleinbuchstaben geschrieben werden, so werden die Koordinat
 Beispiel absolut:
 
 ```svg
-<path d="M150 250 L350 250 L250 100 Z"
-  stroke="green" fill="none" stroke-width="5" />
+<svg width="500" height="500">
+    <path
+        d="M 150 250 L 350 250 L 250 100 Z"
+        stroke="green"
+        fill="none"
+        stroke-width="5"
+    />
 </svg>
 ```
 
 Beispiel relativ:
 
 ```svg
-<path d="M150 250 l200 0 l-100 -100 z"
-  stroke="green" fill="none" stroke-width="5" />
+<svg width="500" height="500">
+    <path
+        d="M 150 250 l 200 0 l -100 -100 z"
+        stroke="green"
+        fill="none"
+        stroke-width="5"
+    />
 </svg>
 ```
 
 ### Animationen
 
+In SVG gibt es zwei Arten von Animationen. Eine Art der Animation ist es einen
+Wert bzw. ein Attribut zu verändern. Die andere Art der Animation, ist ein
+Element einem Pfad folgen zu lassen.
+
+Beispiel Attrubut verändern:
+
+```svg
+<svg width="500" height="500">
+    <ellipse cx="250" cy="250" rx="50" ry="50" fill="green">
+        <animate
+            attributeName="cy"
+            values="50;5;50"
+            repeatCount="indefinite"
+            dur="2s"
+        />
+    </ellipse>
+</svg>
+```
+
+Beispiel entlang einem Pfad bewegen:
+
+```svg
+<svg width="500" height="500">
+    <path
+        d="M 100 250 L 400 250 Z"
+        id="follow-this"
+        stroke="black"
+        stroke-width="5"
+    />
+    <rect fill="pink" height="20" transform="translate(-40 -10)" width="80">
+        <animateMotion dur="2s" repeatCount="indefinite">
+            <mpath href="#follow-this" />
+        </animateMotion>
+    </rect>
+</svg>
+```
+
 ## Aufgaben
 
 Wenn alles aufgesetzt ist, können Sie die folgenden Aufgaben bearbeiten, um
 einen guten Einstieg ins Projekt zu bekommen.
-Arbeiten Sie mit einem 500 x 500 grossen Koordinatensystem, wenn nicht anders verlangt.
+Arbeiten Sie mit einem `500x500` grossen Koordinatensystem, wenn nicht anders
+verlangt.
+
+> **Wichtig:** Machen Sie spätestens nach jeder Aufgabe einen Commit, damit die
+> Arbeit versioniert ist. Besser noch, machen Sie während einer Aufgabe viele
+> kleine sinnvolle Commits.
 
 ### Aufgabe 01: Kreis
 

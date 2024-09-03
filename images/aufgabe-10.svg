@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="500" version="1.1" width="500">
+    <ellipse cx="250" cy="250" fill="green" rx="50" ry="50">
+        <animate
+      attributeName="ry"
+      dur="2s"
+      repeatCount="indefinite"
+      values="50;5;50"
+    />
+    </ellipse>
+    <path
+    d="M 100 250 L 400 250 Z"
+    id="follow-this"
+    stroke="black"
+    stroke-width="5"
+  />
+    <rect fill="pink" height="20" transform="translate(-40 -10)" width="80">
+        <animateMotion dur="2s" repeatCount="indefinite">
+            <mpath href="#follow-this" />
+        </animateMotion>
+    </rect>
+</svg>
