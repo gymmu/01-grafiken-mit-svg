@@ -388,7 +388,9 @@ verlangt.
 
 ### Aufgabe 01: Kreis
 
-Zeichnen Sie einen blau gefüllten Kreis mit grünem Rand und Radius 30 Pixel. Probieren Sie verschiedene Deckkraft Stärken aus.
+Zeichenen Sie einen schwarzen Kreis mit Radius 100 genau in der Mitte der
+Zeichenfläche. Zeichnen Sie einen zweiten roten Kreis, der 100 Einheiten nach
+links verschoben ist.
 
 ### Aufgabe 02: Mehrere Kreise
 
