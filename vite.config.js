@@ -17,5 +17,5 @@ export default defineConfig({
         testIdAttribute: 'id'
     },
 
-    base: '/01-intro-websites-cedricgeissmann/'
+    base: '/01-grafiken-mit-svg/'
 })
