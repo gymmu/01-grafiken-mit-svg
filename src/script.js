@@ -29,6 +29,11 @@ function initButtonHandlers() {
                 target.parentElement.parentElement.parentElement.querySelector(
                     '.img-container'
                 )
+            if (parent.classList.contains('fade-in')) {
+                target.textContent = 'Anzeigen'
+            } else {
+                target.textContent = 'Verbergen'
+            }
             parent.classList.toggle('fade-out')
             parent.classList.toggle('fade-in')
         })
@@ -42,10 +47,12 @@ function initButtonHandlers() {
                 imgContainer.classList.remove('fade-out')
                 void imgContainer.offsetWidth
                 imgContainer.classList.add('fade-in')
+                target.textContent = 'Verbergen'
             } else {
                 imgContainer.classList.remove('fade-in')
                 void imgContainer.offsetWidth
                 imgContainer.classList.add('fade-out')
+                target.textContent = 'Anzeigen'
             }
         })
     })
