@@ -1,6 +1,6 @@
-# Erste eigene Webseite
+# Grafiken mit SVG erstellen
 
-In diesem Projekt bauen wir unsere erste eigene Webseite mit `HTML` und `CSS`.
+In diesem Projekt erweitern wir unsere erste eigene Webseite mit `SVG`-Grafiken.
 Die Webseite wird dann über Github-Pages automatisch veröffentlicht, und kann
 mit Freunden und Familie geteilt werden. Damit Github-Pages auch funktioniert,
 muss es zuerst aktiviert werden. Gehen Sie dafür auf Ihr Repository und dort
@@ -28,7 +28,7 @@ dies nicht bereits geöffnet wurde, und dort müssen wir nur noch den folgenden
 Befehl eingeben.
 
 ```bash
-npm run start
+npm run dev
 ```
 
 Das startet und einen Webserver, über den wir unsere Seite dann anschauen
@@ -426,8 +426,39 @@ sollen von dem `clipPath` abgeschnitten werden.
 
 ### Aufgabe 07: Gruppen
 
+Zeichnen Sie 3 Linien direkt aneinander mit unterschiedlichen Farben. Rotieren
+Sie dann die ganze Linie um den Startpunkt der Linie um 30°.
+
+> **Tipp:** Verwenden Sie das Gruppen-Element `<g>` um auf alle Elemente einer
+> Gruppe die gleiche Transformation zu machen.
+
 ### Aufgabe 08: Pfad absolute Koordinaten
+
+Zeichnen Sie das Haus von Nikolaus mit einem Pfad. Verwenden Sie dafür nur
+absolute Koordinaten.
+
+> **Tipp:** Koordinaten in einem Pfad sind absolut, wenn der Befehl mit einem
+> Grossbuchstaben geschrieben ist.
+>
+> ```svg
+> <svg width="500" height="500">
+>    <path d="M 100 250 L 400 250 Z" stroke="black" stroke-width="5" />
+> </svg>
+> ```
 
 ### Aufgabe 09: Pfad absolute und relative Koordinaten
 
-selbe Figur zentriert mit path und einmal relativ und einmal absolut
+Zeichnen Sie das Haus von Nikolaus mit relativen Koordinaten.
+
+### Aufgabe 10: Eigene Animation
+
+Erstellen Sie eine eigene Grafik mit Animationen. Verwenden Sie dafür beide
+Arten der Animation.
+
+## Arbeit abgeben
+
+Wenn Sie mit allen Aufgaben fertig sind, und alles was Sie gemacht haben zur
+Versionskontrolle hinzugefügt haben, dann können Sie den `main`-Branch `pushen`.
+Damit haben Sie Ihr Projekt dann abgegeben. Wenn Sie noch mehr Veränderungen
+machen möchten, können Sie diese genau gleich hinzufügen und dann `pushen`. Das
+wird dann automatisch zur neuen Abgabe.
