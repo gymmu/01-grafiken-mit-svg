@@ -419,6 +419,11 @@ und rotieren Sie das Quadrat um 45°.
 
 ### Aufgabe 06: clipPath
 
+Erstellen Sie einen `clipPath` mit einem Kreis, der zentriert ist, und einen
+Radius von 120 Einheiten hat. Zeichnen Sie dann ein zentriertes, cyan-farbiges
+Quadrat, mit einer Seitenlänge von 200 Einheiten. Die Ecken von dem Quadrat
+sollen von dem `clipPath` abgeschnitten werden.
+
 ### Aufgabe 07: Gruppen
 
 ### Aufgabe 08: Pfad absolute Koordinaten
