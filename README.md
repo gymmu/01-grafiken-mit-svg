@@ -404,7 +404,13 @@ Zeichnen Sie drei Kreise in einer Reihe, die sich berühren und von links nach r
 
 ### Aufgabe 04: Quadrate
 
-Bild von Aufgabe 5 und 6 aus Skript.
+Zeichnen Sie ein gelbes Quadrat das zentriert ist. Das Quadrat hat eine
+Seitenlänge von 150 Einheiten. Zeichnen Sie ein zweites Quadrat darüber.
+Zeichnen Sie von diesem Quadrat nur den Umfang mit einer Dicke von 10 Einheiten,
+und rotieren Sie das Quadrat um 45°.
+
+> **Tipp:** Mit `transform=rotate(deg x y)` können Sie angeben um wieviel Grad
+> eine Figur um den Punkt `(x, y)` gedreht werden soll.
 
 ### Aufgabe 05: Ellipse
 
