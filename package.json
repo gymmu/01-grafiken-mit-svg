@@ -28,7 +28,7 @@
         "vitest": "^2.0.3"
     },
     "scripts": {
-        "dev": "vite",
+        "dev": "vite --host",
         "build": "vite build",
         "test": "vitest --ui"
     },

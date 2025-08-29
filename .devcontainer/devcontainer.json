@@ -23,7 +23,7 @@
             "extensions": [
                 "mhutchie.git-graph",
                 "esbenp.prettier-vscode",
-                "SimonSiefke.svg-preview",
+                "jock.svg",
                 "sidthesloth.svg-snippets"
             ]
         }
